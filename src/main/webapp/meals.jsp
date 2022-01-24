@@ -3,7 +3,7 @@
 <html>
 <style>
     table, th, td {
-        border:1px solid black;
+        border: 1px solid black;
     }
 </style>
 <head>
@@ -20,9 +20,11 @@
         <th></th>
     </tr>
     <c:forEach items="${mealsList}" var="meal">
-        <tr>
+        <tr <c:if test="${meal.excess == 'true'}"> style="color: red" </c:if>
+                <c:if test="${meal.excess == 'false'}"> style="color: green" </c:if>
+        >
             <td>
-                <c:out value="${meal.dateTime}"/>
+                <c:out value="${meal.dateTime.toString().replace('T',' ')}"/>
             </td>
             <td>
                 <c:out value="${meal.description}"/>
