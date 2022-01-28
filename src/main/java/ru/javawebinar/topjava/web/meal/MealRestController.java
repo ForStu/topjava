@@ -22,17 +22,17 @@ public class MealRestController {
     }
 
     public void delete(int userId, int id) {
-        log.info("delete meal{} from user{}", id, userId);
+        log.info("delete meal {} from user {}", id, userId);
         service.delete(userId, id);
     }
 
     public Meal get(int userId, int id) {
-        log.info("get {} for user{}", id, userId);
+        log.info("get {} for user {}", id, userId);
         return service.get(userId, id);
     }
 
     public Collection<Meal> getAll(int userId) {
-        log.info("getAll meal for user{}", userId);
+        log.info("getAll meal for user {}", userId);
         return service.getAll(userId);
     }
 
